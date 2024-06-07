@@ -1,33 +1,33 @@
 #include "heap.h"
 #include <vector>
 
-void heap::sift_up(int i){
-    if (i==0){
+void heap::sift_up(int i) {
+    if (i == 0) {
         return;
     }
-    if (tree[i/2]<tree[i]){
-        std::swap(tree[i], tree[i/2]);
-        sift_up(i/2);
+    if (tree[(i - 1) / 2] < tree[i]) {
+        std::swap(tree[i], tree[(i - 1) / 2]);
+        sift_up((i - 1) / 2);
     }
 }
 
-void heap::sift_down(int i){
+void heap::sift_down(int i) {
     int left, right, max;
-    for(; ;){
-        left=2*i+1;
-        right=2*i+2;
-        max=i;
+    for (;;) {
+        left = 2 * i + 1;
+        right = 2 * i + 2;
+        max = i;
 
-        if (left<tree.size() && left > max){
-            max=left;
+        if (left < tree.size() && left > max) {
+            max = left;
         }
-        if (right<tree.size() && right > max){
-            max=right;
+        if (right < tree.size() && right > max) {
+            max = right;
         }
-        if (max==i){
+        if (max == i) {
             break;
         }
         std::swap(tree[i], tree[max]);
-        i=max;
+        i = max;
     }
 }

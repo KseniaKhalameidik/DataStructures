@@ -6,6 +6,7 @@ void test_heap() {
     test_add_random_values_and_print();
     test_add_and_remove_random_values_and_print();
 }
+
 int main() {
     test_heap();
 
