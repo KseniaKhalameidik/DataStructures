@@ -1,6 +1,12 @@
 #include "heap.h"
 #include <vector>
 
+heap::heap(const std::vector<int> &array) : tree(array) {
+    for (int j = tree.size() / 2; j >= 0; j--) {
+        sift_down(j);
+    }
+}
+
 void heap::sift_up(int i) {
     if (i == 0) {
         return;
