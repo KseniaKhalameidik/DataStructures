@@ -11,4 +11,10 @@ class heap {
 
 public:
     heap(const std::vector<int> &array);
+
+    void top();
+
+    void push(int num);
+
+    void pop();
 };

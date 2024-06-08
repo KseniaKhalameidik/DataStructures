@@ -1,10 +1,30 @@
 #include "heap.h"
 #include <vector>
+#include <iostream>
 
 heap::heap(const std::vector<int> &array) : tree(array) {
     for (int j = tree.size() / 2; j >= 0; j--) {
         sift_down(j);
     }
+}
+
+void heap::top() {
+    std::cout << tree[0];
+}
+
+void heap::push(int num) {
+    tree.push_back(num);
+    sift_up(tree.size() - 1);
+}
+
+void heap::pop() {
+    if (tree.empty()) {
+        return;
+    }
+
+    std::swap(tree[0], tree.back());
+    tree.pop_back();
+    sift_down(0);
 }
 
 void heap::sift_up(int i) {
