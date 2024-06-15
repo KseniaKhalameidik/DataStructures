@@ -44,12 +44,13 @@ void heap::sift_down(int i) {
         right = 2 * i + 2;
         max = i;
 
-        if (left < tree.size() && left > max) {
+        if (left < tree.size() && tree[left] > tree[max]) {
             max = left;
         }
-        if (right < tree.size() && right > max) {
+        if (right < tree.size() && tree[right] > tree[max]) {
             max = right;
         }
+
         if (max == i) {
             break;
         }
