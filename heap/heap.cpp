@@ -14,8 +14,8 @@ void heap::print() {
     }
 }
 
-void heap::top() {
-    std::cout << tree[0];
+int heap::top() {
+    return tree[0];
 }
 
 void heap::push(int num) {

@@ -14,7 +14,7 @@ public:
 
     void print();
 
-    void top();
+    int top();
 
     void push(int num);
 
