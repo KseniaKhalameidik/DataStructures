@@ -8,6 +8,12 @@ heap::heap(const std::vector<int> &array) : tree(array) {
     }
 }
 
+void heap::print() {
+    for (int i: tree) {
+        std::cout << i << " ";
+    }
+}
+
 void heap::top() {
     std::cout << tree[0];
 }
